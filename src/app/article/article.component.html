@@ -1,0 +1,29 @@
+<div class="article" *ngIf="post !== undefined">
+    <div class="article__meta">
+        <!-- [attr.dateTime]="moment(post.date).format('MMMM D, YYYY')" -->
+      <!-- <time
+        class="article__meta-time"
+        [attr.dateTime]="post.date"
+      > -->
+        <!-- {{moment(post.date).format('MMMM YYYY')}} -->
+        <div>{{post.date}}</div>
+      <!-- </time> -->
+      <span class="article__meta-divider"></span>
+      <span class="article__meta-category">
+        <a
+            [routerLink]="'/categories/' + post.title"
+            class="article__meta-category-link">
+            {{post.categories?post.categories[0]:''}}
+        </a>
+      </span>
+    </div>
+    <h2 class="article__title">
+      <a class="article__title-link" [routerLink]="'/articles/' + post.slug">
+        {{post.title}}
+      </a>
+    </h2>
+    <p class="article__description"  data-kontent-element-codename="description">{{post.description}}</p>
+    <a class="article__readmore" [routerLink]="'/articles/' + post.slug">
+      Read
+    </a>
+  </div>

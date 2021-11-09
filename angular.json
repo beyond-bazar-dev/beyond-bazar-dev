@@ -31,8 +31,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/init.scss",
+              "src/assets/fonts/fontello-771c82e0/css/fontello.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -46,7 +52,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "12kb"
                 }
               ],
               "fileReplacements": [
@@ -99,7 +105,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/scss/init.scss"
             ],
             "scripts": []
           }

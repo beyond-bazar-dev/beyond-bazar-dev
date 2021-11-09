@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class="layout">
+  <!-- <sidebar [isHomePage]="true" class="sidebar"></sidebar> -->
+  <div class="content">
+      <div class="content__inner">
+          <app-article *ngFor="let art of articles" [post]="art"></app-article>
+      </div>
+  </div>
+</div>
