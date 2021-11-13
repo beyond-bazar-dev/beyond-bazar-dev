@@ -18,12 +18,12 @@
       </span>
     </div>
     <h2 class="article__title">
-      <a class="article__title-link" [routerLink]="'/articles/' + post.slug">
+      <a class="article__title-link" [routerLink]="'/blog/' + post.slug">
         {{post.title}}
       </a>
     </h2>
     <p class="article__description"  data-kontent-element-codename="description">{{post.description}}</p>
-    <a class="article__readmore" [routerLink]="'/articles/' + post.slug">
+    <a class="article__readmore" [routerLink]="'/blog/' + post.slug">
       Read
     </a>
   </div>

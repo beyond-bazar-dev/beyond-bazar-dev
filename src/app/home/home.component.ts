@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
           singleArticle.description = item.description
           singleArticle.isPublished = item.published?item.published:false
           singleArticle.date = item.date
-          singleArticle.slug = item.slug?item.slug:''
+          singleArticle.slug = item.slugs?item.slugs[0]:''
           return singleArticle
         }
         )
