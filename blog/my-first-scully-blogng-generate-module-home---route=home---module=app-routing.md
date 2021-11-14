@@ -1,4 +1,5 @@
 ---
+author: 'Adwait'
 title: 'My First Scully Blogng generate module home --route=home --module=app-routing'
 description: 'blog description'
 published: true
