@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.links$.subscribe((links) => {
-      console.log(links);
       this.articles = links.map(item =>
         { var singleArticle = new Article()
-          singleArticle.author = item.author
+          singleArticle.post_title = item.post_title
+          singleArticle.author = item.author?item.author:undefined
           singleArticle.description = item.description
           singleArticle.isPublished = item.published?item.published:false
           singleArticle.date = item.date

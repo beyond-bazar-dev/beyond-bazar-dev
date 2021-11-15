@@ -1,8 +1,12 @@
 <div class="">
-  <app-dashboard class="m-28"></app-dashboard>
-  <div class="border mt-32">
-      <div class="p-20">
-          <app-article *ngFor="let art of articles" [post]="art"></app-article>
+  <mat-grid-list cols="2">
+    <mat-grid-tile cols="3"><app-dashboard class="m-28"></app-dashboard></mat-grid-tile>
+    <mat-grid-tile cols="1">
+      <div class="">
+          <div class="pl-4 pr-4  bg-gray-50">
+              <app-article class="m-8" *ngFor="let art of articles" [post]="art"></app-article>
+          </div>
       </div>
-  </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
