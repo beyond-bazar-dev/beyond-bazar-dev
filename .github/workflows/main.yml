@@ -22,3 +22,4 @@ jobs:
       - uses: cmgriffing/scully-gh-pages-action@v9
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}    
+          build-args: --base-href /beyond-bazar-dev.github.io/
