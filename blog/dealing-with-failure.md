@@ -8,3 +8,5 @@ published: false
 ---
 
 # Dealing with failure
+There are a lot of things that can go wrong in life and if you go by murphy's law
+"If something can go wrong it most definatly will", things will go wrong!
