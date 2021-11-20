@@ -1,3 +1,3 @@
-<app-top-nav></app-top-nav>
+<app-top-nav *ngIf="(isAdminPage$ | async) === false"></app-top-nav>
 <router-outlet></router-outlet>
 <!-- <div id="snipcart" data-api-key="<API_KEY>" hidden> </div>-->
