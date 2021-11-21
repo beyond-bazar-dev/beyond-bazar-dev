@@ -1,7 +1,7 @@
 # config.yml
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to main)
+  branch: BLOG-netlify-support # Branch to update (optional; defaults to main)
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
