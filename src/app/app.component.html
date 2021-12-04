@@ -1,3 +1,4 @@
 <app-top-nav *ngIf="(isAdminPage$ | async) === false"></app-top-nav>
+<app-screen-measure *ngIf="(isAdminPage$ | async) === false"></app-screen-measure>
 <router-outlet></router-outlet>
 <!-- <div id="snipcart" data-api-key="<API_KEY>" hidden> </div>-->

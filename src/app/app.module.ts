@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScreenMeasureComponent } from './screen-measure/screen-measure.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ArticleComponent,
     HomeComponent,
     DashboardComponent,
-    TopNavComponent
+    TopNavComponent,
+    ScreenMeasureComponent
   ],
   imports: [
     BrowserModule,
