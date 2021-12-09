@@ -4,7 +4,7 @@ import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, Inject } from '@angular/core
 import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
 
-@Inject
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

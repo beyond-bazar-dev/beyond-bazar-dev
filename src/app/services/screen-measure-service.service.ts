@@ -13,6 +13,7 @@ export class ScreenMeasureServiceService {
 
   public invalidate(isHandset:boolean) {
       this.isHeadsetSubject.next(isHandset);
+      console.log("service -change activated"+isHandset )
   }
 
   constructor() {

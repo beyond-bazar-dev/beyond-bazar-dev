@@ -9,32 +9,20 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./screen-measure.component.scss']
 })
 export class ScreenMeasureComponent implements OnInit {
-
+  called = false
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }): void => {
-      this.measureService.invalidate(matches)
-
-    //   if(matches) {
-    //     return [
-    //       { title: 'Card 1', cols: 1, rows: 1 },
-    //       { title: 'Card 2', cols: 1, rows: 1 },
-    //       { title: 'Card 3', cols: 1, rows: 1 },
-    //       { title: 'Card 4', cols: 1, rows: 1 }
-    //     ];
-    //   }
-
-    //   return [
-    //     { title: 'Card 1', cols: 2, rows: 1 },
-    //     { title: 'Card 2', cols: 1, rows: 1 },
-    //     { title: 'Card 3', cols: 1, rows: 2 },
-    //     { title: 'Card 4', cols: 1, rows: 1 }
-    //   ];
+    map(({ matches }) => {
+        return matches
     })
-  );
+  )
 
   constructor(private breakpointObserver: BreakpointObserver, private measureService: ScreenMeasureServiceService) { }
 
   ngOnInit(): void {
+    this.cards.subscribe((isHandset: Boolean) => {
+      this.measureService.invalidate(isHandset.valueOf())
+      console.log("breakpoint observer called");
+    })
   }
 
 }
