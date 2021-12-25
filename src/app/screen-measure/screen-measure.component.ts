@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class ScreenMeasureComponent implements OnInit {
   called = false
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+  cards = this.breakpointObserver.observe([Breakpoints.TabletPortrait,Breakpoints.Handset]).pipe(
     map(({ matches }) => {
         return matches
     })

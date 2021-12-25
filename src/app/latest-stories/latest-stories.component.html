@@ -1,0 +1,38 @@
+
+<div class="content-start justify-start w-full h-full border-2 shadow-sm rounded-sm">
+  <drag-scroll class="flex flex-row gap-2 px-2 flex-nowrap" [scrollbar-hidden]="true" >
+    <div class="flex justify-center content-center mt-8">
+      <div class="w-72 mx-auto bg-white flex flex-col" *ngFor="let art of latest">
+        <img src="{{art.image}}" alt="" class="object-cover">
+        <div class="font-sans text-xs text-gray-500 mt-2">7 MIN READ</div>
+        <div class="font-bold text-lg text-gray-800 mt-2">{{art.post_title}}</div>
+        <div class="font-light text-base text-gray-500 mt-2">{{art.description}}</div>
+      </div>
+    </div>
+  </drag-scroll>
+</div>
+
+
+
+
+<!--
+<div class="w-64 mx-auto bg-white shadow-md rounded-lg" *ngFor="let art of latest">
+    <img src={{art.image}} alt="" class="w-full h-64 object-cover">
+    <div class="p-6">
+      <span class="text-blue-600 text-xs font-medium uppercase">{{art.categories[0]}}</span>
+      <a href="#" class="block text-gray-800 font-semibold text-2xl mt-2 hover:text-gray-600 hover:underline">{{art.post_title}}</a>
+      <p class="text-sm text-gray-600 mt-2">{{art.description}}</p>
+      <div class="mt-4">
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <img src="https://adwait.me/img/dp.jpg" class="h-10 object-cover rounded-full" alt="">
+            <a href="#" class="mx-2 text-gray-700 font-semibold hover:underline">Adwait Abhyankar</a>
+          </div>
+          <span class="mx-1 text-gray-600 text-xs">{{art.date}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+

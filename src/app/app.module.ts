@@ -1,6 +1,6 @@
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +14,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScreenMeasureComponent } from './screen-measure/screen-measure.component';
-
+import {MatDividerModule} from '@angular/material/divider';
+import { DragScrollModule } from 'ngx-drag-scroll';
+import { LatestStoriesComponent } from './latest-stories/latest-stories.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { ScreenMeasureComponent } from './screen-measure/screen-measure.componen
     HomeComponent,
     DashboardComponent,
     TopNavComponent,
-    ScreenMeasureComponent
+    ScreenMeasureComponent,
+    LatestStoriesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,9 @@ import { ScreenMeasureComponent } from './screen-measure/screen-measure.componen
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDividerModule,
+    DragScrollModule
   ],
   exports: [
     ArticleComponent

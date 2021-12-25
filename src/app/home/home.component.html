@@ -1,21 +1,28 @@
-<div class="">
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngIf="isHandset; else showThis">
-      this is mobile layout!
-    </mat-grid-tile>
+<div class="flex justify-center">
+    <div *ngIf="isHandset; else showThis">
+      <!-- </mat-grid-list> -->
+      <div layout-xs="column">
+        <div flex>
+          <app-dashboard class="m-10"></app-dashboard>
+        </div>
+        <div flex>
+          <app-article class="m-8" [post]="articles"></app-article>
+        </div>
+      </div>
+    </div>
     <ng-template #showThis>
-      <div class="">
-        <mat-grid-list cols="2">
-          <mat-grid-tile cols="3"><app-dashboard class="m-10"></app-dashboard></mat-grid-tile>
-          <mat-grid-tile cols="1">
-            <div class="">
-                <div class="pl-4 pr-4  bg-gray-50">
-                    <app-article class="m-8" *ngFor="let art of articles" [post]="art"></app-article>
+      <div class="mt-10 flex-1">
+        <mat-grid-list cols="3">
+          <mat-grid-tile colspan="2"><app-dashboard></app-dashboard></mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <div class="justify-start">
+                <div class="pl-4 pr-4">
+                    <app-article [post]="articles"></app-article>
                 </div>
             </div>
           </mat-grid-tile>
+          <mat-grid-tile class="h-40 align-top right-0" colspan="3"><app-latest-stories [latest]=articles></app-latest-stories></mat-grid-tile>
         </mat-grid-list>
       </div>
     </ng-template>
-  </mat-grid-list>
 </div>
