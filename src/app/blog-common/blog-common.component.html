@@ -1,0 +1,56 @@
+<!-- Content -->
+
+<div class="flex justify-center px-4 md:px-8 mx-auto">
+  <div class="flex flex-col">
+    <div class="flex flex-row gap-2 cles">
+      <div class="relative w-30 pt-4 overflow-hidden rounded-sm flex-basis-2/3">
+        <img
+          src="https://blog.wealthfront.com/wp-content/uploads/2021/12/erwan-hesry-WPTHZkA-M4I-unsplash-scaled-865x577-c-default.jpg"
+          alt="Avatar"
+          class="object-cover w-full h-full"
+        />
+        <div
+          class="text-right absolute bottom-0 right-0 text-gray-100 flex-wrap"
+        >
+          <div class="text-gray-800 bg-white p-9">this is a text</div>
+        </div>
+      </div>
+
+      <div class="max-w-xl">
+        <!-- title -->
+        <hr class="border-2 border-black mt-1 ml-0 mr-0 mb-0 w-full" />
+        <div class="font-light text-xl divide-dashed divide-x-2 pr-4 pl-4">
+          <div>Product News</div>
+        </div>
+        <!-- item -->
+        <div class="flex flex-col divide-y divide-dashed">
+          <div *ngFor="let art of articles; let i = index">
+            <a [routerLink]="'/blog/' + art.slug">
+              <div class="font-medium p-4">{{ art.post_title }}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- latest news section -->
+    <div
+      class="overflow-x-auto space-x-8 flex justify-start content-start mt-8 max-w-4xl"
+    >
+      <div class="flex-none w-72 bg-white" *ngFor="let art of latest">
+        <img
+          src="https://blog.wealthfront.com/wp-content/uploads/2017/01/stock02-315x225-c-1.jpg"
+          alt=""
+          class="object-cover"
+        />
+        <div class="font-sans text-xs text-gray-500 mt-2">7 MIN READ</div>
+        <div class="font-bold text-lg text-gray-800 mt-2">
+          {{ art.post_title }}
+        </div>
+        <div class="font-light text-base text-gray-500 mt-2">
+          {{ art.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

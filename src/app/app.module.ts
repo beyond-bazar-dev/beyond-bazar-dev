@@ -18,6 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { LatestStoriesComponent } from './latest-stories/latest-stories.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BlogCommonComponent } from './blog-common/blog-common.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     TopNavComponent,
     ScreenMeasureComponent,
     LatestStoriesComponent,
-    NavbarComponent
+    NavbarComponent,
+    BlogCommonComponent
   ],
   imports: [
     BrowserModule,
