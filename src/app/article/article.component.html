@@ -18,14 +18,30 @@
   </div>
 </mat-list> -->
 
-<div class="">
-  <!-- title -->
+<!-- <div class="">
+
   <div class="font-light divide-dashed p-4"><div>Product News</div></div>
-  <!-- item -->
+
   <div class="grid grid-cols-1 divide-y justify-center flex-1">
     <div *ngFor="let art of post; let i =index" >
       <a [routerLink]="'/blog/' + art.slug">
         <div class="font-medium p-4">{{art.post_title}}</div>
+      </a>
+    </div>
+  </div>
+</div> -->
+
+<div class="max-w-xl">
+  <!-- title -->
+  <hr class="border-2 border-black mt-1 ml-0 mr-0 mb-0 w-full" />
+  <div class="font-light text-xl divide-dashed divide-x-2 pr-4 pl-4">
+    <div>Product News</div>
+  </div>
+  <!-- item -->
+  <div class="flex flex-col divide-y divide-dashed">
+    <div *ngFor="let art of post; let i = index">
+      <a [routerLink]="'/blog/' + art.slug">
+        <div class="font-medium p-4">{{ art.post_title }}</div>
       </a>
     </div>
   </div>
