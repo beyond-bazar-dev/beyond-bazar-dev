@@ -1,33 +1,47 @@
+import { NetlifyDataService } from '../services/netlify-data.service';
+import { ScreenMeasureServiceService } from './../services/screen-measure-service.service';
 import { Article } from 'src/models/article';
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
-import { Observable } from 'rxjs';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-
-  links$: Observable<ScullyRoute[]> = this.scully.available$;
+export class HomeComponent implements OnInit, OnDestroy {
+  isHandset = false;
   articles: Article[] = [];
-  constructor(private scully: ScullyRoutesService) {}
-
-  ngOnInit(): void {
-    this.links$.subscribe((links) => {
-      this.articles = links.map(item =>
-        { var singleArticle = new Article()
-          singleArticle.post_title = item.post_title
-          singleArticle.author = item.author?item.author:undefined
-          singleArticle.description = item.description
-          singleArticle.isPublished = item.published?item.published:false
-          singleArticle.date = item.date
-          singleArticle.slug = item.slugs?item.slugs[0]:''
-          return singleArticle
-        }
-        )
-    });
+  latest: Article[] = [];
+  articleSubscription: Subscription | undefined;
+  latestSubscription: Subscription | undefined;
+  measureSubscription: Subscription | undefined;
+  constructor(
+    private measureService: ScreenMeasureServiceService,
+    private dataService: NetlifyDataService
+  ) {
+    this.measureSubscription = measureService.layoutObservable.subscribe(
+      (isHandset) => {
+        this.isHandset = isHandset.valueOf();
+      }
+    );
   }
 
+  ngOnInit(): void {
+    this.articleSubscription = this.dataService
+      .getAllArticles()
+      .subscribe((arg) => (this.articles = arg));
+    this.latestSubscription = this.dataService
+      .getLatestNews()
+      .subscribe((arg) => (this.latest = arg));
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe();
+  }
+
+  private unsubscribe() {
+    this.articleSubscription?.unsubscribe();
+    this.latestSubscription?.unsubscribe();
+    this.measureSubscription?.unsubscribe();
+  }
 }

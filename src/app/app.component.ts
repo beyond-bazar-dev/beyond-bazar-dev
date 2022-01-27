@@ -13,8 +13,6 @@ export class AppComponent {
 
   isAdminPage$: Observable<boolean> | undefined;
 
-constructor(private _router: Router) {}
-
 ngOnInit() {
   this.isAdminPage$ = this._router.events.pipe(
     filter((evt: any) => {
@@ -25,4 +23,6 @@ ngOnInit() {
     }),
   );
 }
+
+constructor(private _router: Router) {}
 }

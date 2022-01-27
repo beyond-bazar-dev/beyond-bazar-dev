@@ -1,12 +1,75 @@
-<div class="">
-  <mat-grid-list cols="2">
-    <mat-grid-tile cols="3"><app-dashboard class="m-28"></app-dashboard></mat-grid-tile>
-    <mat-grid-tile cols="1">
-      <div class="">
-          <div class="pl-4 pr-4  bg-gray-50">
-              <app-article class="m-8" *ngFor="let art of articles" [post]="art"></app-article>
-          </div>
+<div class="flex justify-center">
+    <div *ngIf="isHandset; else showThis">
+      <!-- </mat-grid-list> -->
+      <div layout-xs="column">
+        <div flex>
+          <app-dashboard class="m-10"></app-dashboard>
+        </div>
+        <div flex>
+          <app-article class="m-8" [post]="articles"></app-article>
+        </div>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+    <ng-template #showThis>
+      <!-- <div class="mt-10 flex-1">
+        <mat-grid-list cols="3">
+          <mat-grid-tile colspan="2"><app-dashboard></app-dashboard></mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <div class="justify-start">
+                <div class="pl-4 pr-4">
+                    <app-article [post]="articles"></app-article>
+                </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile class="h-40 align-top right-0" colspan="3"><app-latest-stories [latest]=articles></app-latest-stories></mat-grid-tile>
+        </mat-grid-list>
+      </div> -->
+
+      <div class="flex justify-center px-4 md:px-8 mx-auto">
+        <div class="flex flex-col">
+          <div class="flex flex-row gap-2">
+          <div class="relative w-30 pt-4 overflow-hidden rounded-sm flex-basis-2/3">
+            <img
+              src="https://blog.wealthfront.com/wp-content/uploads/2021/12/erwan-hesry-WPTHZkA-M4I-unsplash-scaled-865x577-c-default.jpg"
+              alt="Avatar"
+              class="object-cover w-full h-full"
+            />
+            <div class="text-right absolute bottom-0 right-0 text-gray-100 flex-wrap">
+              <p class="text-gray-800 bg-white p-9">this is a text</p>
+            </div>
+          </div>
+
+          <div class="max-w-xs pt-4 flex-basis-1/3">
+            <!-- title -->
+            <hr class="border-2 border-black" />
+            <div class="font-light text-xl divide-dashed divide-x-2 p-4">
+              <div>Product News</div>
+            </div>
+            <!-- item -->
+            <div class="grid grid-cols-1 divide-y divide-dashed justify-center flex-1">
+              <!-- <div *ngFor="let art of post; let i = index">
+                <a [routerLink]="'/blog/' + art.slug">
+                  <div class="font-medium p-4">{{ art.post_title }}</div>
+                </a>
+              </div>
+              <div *ngFor="let art of post; let i = index">
+                <a [routerLink]="'/blog/' + art.slug">
+                  <div class="font-medium p-4">{{ art.post_title }}</div>
+                </a>
+              </div>
+              <div *ngFor="let art of post; let i = index">
+                <a [routerLink]="'/blog/' + art.slug">
+                  <div class="font-medium p-4">{{ art.post_title }}</div>
+                </a>
+              </div> -->
+              <app-article class="m-8" [post]="articles"></app-article>
+            </div>
+          </div>
+        </div>
+
+        <!-- latest news section -->
+        <app-latest-stories></app-latest-stories>
+        </div>
+      </div>
+    </ng-template>
 </div>
