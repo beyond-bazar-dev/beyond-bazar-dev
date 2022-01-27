@@ -9,4 +9,4 @@ author: Adwait Abhyankar
 ---
 This is content, 
 
-![](/static/img/david-clode-c2tsguli1kc-unsplash.jpg)
+![stork](/static/img/david-clode-c2tsguli1kc-unsplash.jpg "Stork")
